@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "singularName": "class",
+    "pluralName": "classes",
+    "displayName": "Class",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "class_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "audios",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "build_infos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::build-info.build-info",
+      "mappedBy": "class"
+    }
+  }
+}

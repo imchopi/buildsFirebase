@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extender_users",
+  "info": {
+    "singularName": "extender-user",
+    "pluralName": "extender-users",
+    "displayName": "ExtendedUser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "build_info": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::build-info.build-info",
+      "mappedBy": "extended_user"
+    }
+  }
+}

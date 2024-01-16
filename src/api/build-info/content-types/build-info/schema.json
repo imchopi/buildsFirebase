@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "build_infos",
+  "info": {
+    "singularName": "build-info",
+    "pluralName": "build-infos",
+    "displayName": "BuildInfo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "build_name": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "build_infos"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "build_infos"
+    },
+    "extended_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::extender-user.extender-user",
+      "inversedBy": "build_info"
+    }
+  }
+}
